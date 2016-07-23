@@ -33,3 +33,21 @@ body{
 	width:100%;
 	height:100%;
 }
+.form-section{
+	padding:20px 0;
+}
+.form-section .btn-default{
+	width:100%;
+}
+@media (max-width:767px){
+	.video-descr {
+    float: left;
+    left: 0;
+    margin: 10px 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+
+}
+}

@@ -45,41 +45,53 @@
 <section>
     <div class="container">
     	<div class="video-container"> 
-        	<div class="video-descr">Introducing the model 3</div>
-            <iframe width="420" height="315"
-    src="https://www.youtube.com/embed/XGSy3_Czz8k">
-    </iframe> 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NcNi4_ddaYQ" frameborder="0" allowfullscreen></iframe>
 	</div>
+    <div class="video-descr">Introducing the model 3</div>
     </div>
 </section> 
 <!--Section End-->
 
 <!--form Section Start-->
-<section>
+<section class="form-section">
     <div class="container">
-		<form class="">
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    	<div class="col-sm-12"><p class="text-center">Be the first to own the new tesla model 3 sign up to our mailling to find out more</p></div>
+		<form id="myform" onSubmit="console.log(varData)" action="POST">
+        <div class="col-sm-12">
         <div class="form-group">
             <input type="email" class="form-control" id="email" placeholder="Email">
           </div>
-          <div class="form-inline">		
+        </div>  
+          <div class="form-inline">	
+          <div class="col-sm-3 col-xs-4">	
               <div class="form-group">
-                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                <input type="text" name="fname" class="form-control" id="firstname" placeholder="First Name">
               </div>
+          </div> 
+          <div class="col-sm-3 col-xs-4">	   
               <div class="form-group">
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                <input type="text" name="lname" class="form-control" id="lastname" placeholder="Last Name">
               </div>
+          </div>
+          <div class="col-sm-3 col-xs-4">	    
               <div class="form-group">
-                <select class="form-control">
+                <select id="country" class="form-control">
                 	<option>Select Country</option>
-                  <option>India</option>
-                  <option>Pakistan</option>
-                  <option>China</option>
+                  	<option>India</option>
+                  	<option>Pakistan</option>
+                  	<option>China</option>
                 </select>
-
-              </div>          
-              <button type="submit" class="btn btn-default">Submit</button>
+              </div> 
+            </div>
+            <div class="col-sm-3">	
+            <input type="button" class="btn btn-default" value="send" id="submit">             
+            </div>  
           </div>    
         </form>
+        </div>
+    </div>
     </div>
 </section> 
 <!--form Section End-->
@@ -90,5 +102,18 @@
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script> 
 
+<script>
+
+            $(document).ready(function(){
+				    $("#submit").click(function(){
+                    var email = $("#email").val();  
+                    var fname = $("#firstname").val();
+                    var lname = $("#lastname").val();
+					var country = $("#country").val();
+                    var varData = {"email":email,"fname":name,"lname":lname, "country":country};
+                    console.log(varData);
+                });
+            });
+	</script>		
 </body>
 </html>
